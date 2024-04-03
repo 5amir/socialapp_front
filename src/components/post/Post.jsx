@@ -18,7 +18,6 @@ const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   
-  console.log(commentOpen);
   console.log(post);
  
   const { currentUser } = useContext(AuthContext);
@@ -67,18 +66,20 @@ const Post = ({ post }) => {
     <div className="post">
       <div className="container">
         <div className="user">
-          <div className="userInfo">
-            <img src={"http://localhost:8800/images/"+post.profilepic} alt="" />
-            <div className="details">
-              <Link
+        <Link
                 to={`/profile/${post.userId}`}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
+          <div className="userInfo">
+            <img src={"http://localhost:8800/images/"+post.profilepic} alt="" />
+            <div className="details">
+              
                 <span className="name">{post.username}</span>
-              </Link>
+             
               <span className="date">{moment(post.createdAt).fromNow()}</span>
             </div>
           </div>
+          </Link>
           <MoreHorizIcon onClick={() => setMenuOpen(!menuOpen)} />
           {menuOpen && post.userId === currentUser.id && (
             <button onClick={handleDelete}>delete</button>

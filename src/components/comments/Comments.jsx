@@ -3,6 +3,7 @@ import "./comments.scss";
 import { AuthContext } from "../../context/authContext";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { makeRequest } from "../../axios";
+import { Link } from "react-router-dom";
 import moment from "moment";
 
 const Comments = ({ postId }) => {
@@ -53,7 +54,12 @@ const Comments = ({ postId }) => {
         ? "loading"
         : data.map((comment) => (
             <div className="comment"  comment={comment} key={comment.id}>
+              <Link
+                to={`/profile/${comment.userId}`}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
               <img src={"http://localhost:8800/images/" + comment.profilepic} alt="" />
+              </Link>
               <div className="info">
                 <span>{comment.username}</span>
                 <p>{comment.descr}</p>

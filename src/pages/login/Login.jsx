@@ -27,7 +27,7 @@ const Login = () => {
       console.log(err);
     }
   };
-
+console.log(err);
   return (
     <div className="login">
       <div className="card">
@@ -58,7 +58,7 @@ const Login = () => {
               name="password"
               onChange={handleChange}
             />
-            {err && err.message}
+            {err && err}
             <button onClick={handleLogin}>Login</button>
           </form>
         </div>

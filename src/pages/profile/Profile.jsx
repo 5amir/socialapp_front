@@ -18,8 +18,7 @@ const Profile = () => {
   const [openUpdate, setOpenUpdate] = useState(false);
   const { currentUser } = useContext(AuthContext);
 
-  const userId = currentUser.id
-  // parseInt(useLocation().pathname.split("/")[2]);
+  const userId = parseInt(useLocation().pathname.split("/")[2]);
 
   const { isLoading, error, data } = useQuery(["user"], () =>
     makeRequest.get("/users/find/" + userId).then((res) => {
