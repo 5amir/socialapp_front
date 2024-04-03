@@ -18,7 +18,6 @@ const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   
-  console.log(post);
  
   const { currentUser } = useContext(AuthContext);
 

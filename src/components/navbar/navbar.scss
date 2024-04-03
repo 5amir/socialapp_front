@@ -25,6 +25,11 @@
         color: themed("logo");
       }
 
+      .homeicon{
+        text-decoration: none;
+        color: themed("textColor");
+      }
+
       .search {
         display: flex;
         align-items: center;

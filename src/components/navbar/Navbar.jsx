@@ -30,8 +30,8 @@ const Navbar = () => {
         <Link to="/" style={{ textDecoration: "none" }}>
           <span>TRIXBOX</span>
         </Link>
-        <Link to="/" style={{ textDecoration: "none" , color : "white"}}>
-         <HomeOutlinedIcon />
+        <Link to="/" >
+         <HomeOutlinedIcon className="homeicon"/>
         </Link>
         
         {darkMode ? (
